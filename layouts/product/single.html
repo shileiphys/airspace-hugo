@@ -12,13 +12,26 @@
       </div>
       <div class="col-md-4">
         <div class="project-details">
-          <h4>Project Details</h4>
+          <h4>Product Details</h4>
           <ul>
             {{ range .Params.Information }}
             <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
             {{ end }}
           </ul>
         </div>
+        {{ if $.Params.app.enable }}
+        <div class="project-details">
+          <h4></h4>
+          {{ if $.Params.app.ios}}
+          <a href="{{ .Params.app.ios | safeURL }}" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2018-11-03&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:40px;"></a>
+          {{ end }}
+          {{ if $.Params.app.android}}
+          <a href="{{ .Params.app.android | safeURL }}">
+            <img style="width:158px;margin-top:-32px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
     </div>
     <div class="row">
