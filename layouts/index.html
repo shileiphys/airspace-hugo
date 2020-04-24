@@ -11,7 +11,9 @@
       <div class="col-md-12">
         <div class="block">
           <h1>{{ .title | markdownify }}</h1>
-          <p>{{ .content | markdownify }}</p>
+          <p>
+            {{ .content | markdownify }}
+          </p>
           {{ if .button.enable }}
           {{ with .button }}
           <!-- <a href="{{ .link | relLangURL }}" target="_blank" class="btn btn-main animated fadeInUp">{{ .label }}</a> -->
@@ -39,7 +41,10 @@
             <h2>{{ .title | markdownify }}</h2>
             <p>{{ .description | markdownify }}</p>
           </div>
-          <p>{{ .content | markdownify }}</p>
+          <p>
+            {{ partial "content" . }}
+            <!-- {{ .content | markdownify }} -->
+          </p>
         </div>
       </div>
       <div class="col-md-5 col-sm-12">
@@ -72,7 +77,8 @@
       </div>
       <div class="col-md-6 col-sm-12">
         <h2 class="section-subtitle">{{ .title | markdownify }}</h2>
-        {{ .content | markdownify }}
+        {{ partial "content" . }}
+        <!-- {{ .content | markdownify }} -->
         {{ if .button.enable }}
         {{ with .button }}
         <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
