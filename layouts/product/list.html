@@ -3,7 +3,7 @@
 {{ partial "page-title.html" . }}
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
-
+{{ $truncate := default true .Site.Params.truncate }}
 
 <section class="portfolio-work">
   <div class="container">
@@ -12,8 +12,14 @@
       <div class="col-md-12">
         <div class="col-md-8">
           <a class="h2" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-          <!-- {{ .Params.Description }} -->
-          <p class="mt-5">{{ .Params.Summary | markdownify }}</p>
+          <p class="text-secondary">{{ .Params.Description}}</p>
+          <!-- <p class="mt-5">{{ .Params.Summary | markdownify }}</p> -->
+          <p class="text-justify">{{ .Summary | markdownify }}</p>
+          {{ if .Truncated }}
+          <div>
+            <a href="{{ .RelPermalink }}" class="text-primary">Read More…</a>
+          </div>
+          {{ end }}
         </div>
         <div class="col-md-4">
           <a href="{{ .Permalink }}">
