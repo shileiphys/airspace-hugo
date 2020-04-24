@@ -14,7 +14,8 @@
           <p>{{ .content | markdownify }}</p>
           {{ if .button.enable }}
           {{ with .button }}
-          <a href="{{ .link | relLangURL }}" target="_blank" class="btn btn-main animated fadeInUp">{{ .label }}</a>
+          <!-- <a href="{{ .link | relLangURL }}" target="_blank" class="btn btn-main animated fadeInUp">{{ .label }}</a> -->
+          <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
           {{ end }}
           {{ end }}
         </div>
@@ -56,10 +57,20 @@
 {{ if $data.homepage.portfolio.enable }}
 {{ with $data.homepage.portfolio }}
 <!-- portfolio -->
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | absURL}}')">
+<section class="feature bg-2" style="background-image: url('{{ .bg | absURL}}')">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-6">
+      <!-- <div class="col-md-6 col-md-offset-6"> -->
+      <div class="col-md-5 col-sm-12">
+          <h1 class="text-center">
+          <div class="embed-responsive embed-responsive-16by9 text-center">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j0VfRZ8-fGg?modestbranding=1" align="center" gesture="media"></iframe>
+          </div>
+          </h1>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-6 col-sm-12">
         <h2 class="section-subtitle">{{ .title | markdownify }}</h2>
         {{ .content | markdownify }}
         {{ if .button.enable }}
