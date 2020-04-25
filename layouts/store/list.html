@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-6">
 
-      <div id='product-component-1587775197976'></div>
+      <div id='product-component-1587826223064'></div>
       <script type="text/javascript">
       /*<![CDATA[*/
       (function () {
@@ -37,7 +37,7 @@
           ShopifyBuy.UI.onReady(client).then(function (ui) {
             ui.createComponent('product', {
               id: '4649995665486',
-              node: document.getElementById('product-component-1587775197976'),
+              node: document.getElementById('product-component-1587826223064'),
               moneyFormat: '%24%7B%7Bamount%7D%7D',
               options: {
         "product": {
@@ -47,8 +47,24 @@
                 "max-width": "calc(25% - 20px)",
                 "margin-left": "20px",
                 "margin-bottom": "50px"
+              },
+              "carousel-button": {
+                "display": "none"
               }
+            },
+            "price": {
+              "font-size": "15px"
+            },
+            "compareAt": {
+              "font-size": "12.75px"
+            },
+            "unitPrice": {
+              "font-size": "12.75px"
             }
+          },
+          "contents": {
+            "img": false,
+            "imgWithCarousel": true
           },
           "text": {
             "button": "Add to cart"
@@ -96,8 +112,9 @@
       })();
       /*]]>*/
       </script>
+
     </div>
   </div>
-</div>  
+</div>
 
 {{ end }}
