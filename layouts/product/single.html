@@ -15,7 +15,11 @@
           <h4>Product Details</h4>
           <ul>
             {{ range .Params.Information }}
-            <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
+            <li>
+
+              <span>{{ .label }}</span>
+              <strong>{{ .info | markdownify }}</strong>
+            </li>
             {{ end }}
           </ul>
         </div>
