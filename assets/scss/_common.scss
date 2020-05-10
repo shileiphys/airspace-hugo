@@ -1,8 +1,6 @@
 ol,
 ul {
   margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 iframe {
@@ -603,4 +601,12 @@ input[type="tel"] {
 #success,
 #error {
   display: none;
+}
+
+.sticky-top{
+  position: sticky;
+  top: 0;
+  @include desktop {
+    position: static;
+  }
 }
